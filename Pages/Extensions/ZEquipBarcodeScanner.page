@@ -1,0 +1,75 @@
+{  
+   "Controls":[  
+      {  
+         "_Type":"Control.Type.Extension",
+         "Module": "extension-BarcodeScanner",
+         "Control":"BarcodeScannerExtension",
+         "Class":"BarcodeScannerExtension",
+         "_Name":"BarcodeScannerExtension",
+         "DataSubscriptions": ["MyWorkOrderOperations"],
+          "ExtensionProperties":{
+                        "BusinessObjects": [{
+                        "Target": { 
+                            "EntitySet" : "MyWorkOrderOperations",
+                            "Service" : "/SAPAssetManager/Services/AssetManager.service",
+                            "Properties": [],
+                            "KeyProperties": [],
+                            "QueryOptions":"/ZSAM2305/Rules/Extensions/ZEquipBarcodeScannerQueryOptions.js"
+                          },
+                          "ScannerData": { 
+                            "Type":"Job",
+                            "EntitySetName":"MyWorkOrderOperations",
+                            "Properties":{
+                                 "ID":"{OrderId}",
+                                 "DetailImage":" ",
+                                 "Subhead":"{OperationNo}",
+                                 "Description":"aaa",
+                                 "SubstatusText":"bbb",
+                                 "Title":"ccc",
+                                 "ScanProperty":"{OperationEquipment}",
+                                 "Filter": "",
+                                 "ConfirmationStatusText":"ddd"
+                            },
+                            "Actions":[
+                                {
+                                    "Title":"$(L, bc_action_edit)",
+                                    "ActionType":"Edit",
+                                    "Highlighted": false,
+                                    "IsVisible": false,
+                                    "CallbackInfo": {
+                                        "Action":"/SAPAssetManager/Actions/Parts/PartIssueCreateChangeset.action",
+                                        "Target": {
+                                            "EntitySet": "{@odata.readLink}",
+                                            "Service": "/SAPAssetManager/Services/AssetManager.service",
+                                            "QueryOptions": "",
+                                            "Properties": [],
+                                            "KeyProperties": []
+                                        }
+                                    }
+                                },
+                                {
+                                    "Title":"$(L, bc_action_confirm)",
+                                    "ActionType": "Confirm",
+                                    "CallbackInfo": {
+                                        "Action":""
+                                    },
+                                    "Highlighted": false
+                                }
+                            ]
+                          }
+                        }]
+                ,
+                "ViewConfig": {
+                    "ScanTypes": ["qr", "barcode"],
+                    "ErrorMessage": {
+                        "Title": "$(L, bc_err_title)",
+                        "Message": "$(L, bc_err_message)",
+                        "ActionTitle": "$(L,ok)"
+                    }
+                }            
+          }
+      }
+   ],
+   "_Type":"Page",
+   "_Name":"BarcodeScannerExtensionControl"
+}
