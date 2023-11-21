@@ -25,19 +25,18 @@
                                  "Subhead":"{OperationNo}",
                                  "Description":"aaa",
                                  "SubstatusText":"bbb",
-                                 "Title":"ccc",
+                                 "Title":"{OperationEquipment}",
                                  "ScanProperty":"{OperationEquipment}",
                                  "Filter": "",
                                  "ConfirmationStatusText":"ddd"
                             },
                             "Actions":[
                                 {
-                                    "Title":"$(L, bc_action_edit)",
+                                    "Title":"Match",
                                     "ActionType":"Edit",
                                     "Highlighted": false,
-                                    "IsVisible": false,
                                     "CallbackInfo": {
-                                        "Action":"/SAPAssetManager/Actions/Parts/PartIssueCreateChangeset.action",
+                                        "Action":"/ZSAM2305/Actions/Workorders/Operations/ZScanConfirmation.action",
                                         "Target": {
                                             "EntitySet": "{@odata.readLink}",
                                             "Service": "/SAPAssetManager/Services/AssetManager.service",
@@ -46,14 +45,6 @@
                                             "KeyProperties": []
                                         }
                                     }
-                                },
-                                {
-                                    "Title":"$(L, bc_action_confirm)",
-                                    "ActionType": "Confirm",
-                                    "CallbackInfo": {
-                                        "Action":""
-                                    },
-                                    "Highlighted": false
                                 }
                             ]
                           }
