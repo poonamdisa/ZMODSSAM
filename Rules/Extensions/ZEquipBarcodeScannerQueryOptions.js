@@ -10,7 +10,6 @@ export default function ZEquipBarcodeScannerQueryOptions(context) {
     }
 
     let entityType = context.binding['@odata.type'];
-    Logger.error("Poonam odatatype",entityType);
     if (entityType === '#sap_mobile.MyWorkOrderOperation') {
         queryBuilder.addFilter(`OperationNo eq '${context.binding.OperationNo}'`);
     }

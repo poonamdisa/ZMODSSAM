@@ -1,0 +1,7 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "ZNavigateWOHistOperationConfListView"
+	},
+	"PageToOpen": "/ZSAM2305/Pages/WorkOrders/ZWorkOrderHistoriesOpConfListView.page"
+}

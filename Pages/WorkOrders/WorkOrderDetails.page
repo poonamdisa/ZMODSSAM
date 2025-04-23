@@ -145,28 +145,43 @@
 				{
 					"KeyAndValues": [
 						{
-							"Value": "/SAPAssetManager/Rules/Supervisor/Assign/WorkOrderAssignedTo.js",
+							"Value": "{ZMission}",
 							"_Name": "KeyValue1",
+							"KeyName": "$(L,mission)"
+						},
+						{
+							"Value": "{ZMissionDesc}",
+							"_Name": "KeyValue2",
+							"KeyName": "$(L,mission_Desc)"
+						},
+						{
+							"Value": "{ZTailNo}",
+							"_Name": "KeyValue3",
+							"KeyName": "$(L,tail_no)"
+						},
+						{
+							"Value": "/SAPAssetManager/Rules/Supervisor/Assign/WorkOrderAssignedTo.js",
+							"_Name": "KeyValue4",
 							"KeyName": "$(L,assignedto)"
 						},
 						{
 							"Value": "/SAPAssetManager/Rules/WorkOrders/Details/WorkOrderDetailsPlannerGroup.js",
-							"_Name": "KeyValue2",
+							"_Name": "KeyValue5",
 							"KeyName": "$(L,planner_group)"
 						},
 						{
 							"Value": "/SAPAssetManager/Rules/WorkOrders/Details/WorkOrderDetailsMainWorkCenter.js",
-							"_Name": "KeyValue3",
+							"_Name": "KeyValue6",
 							"KeyName": "$(L,main_work_center)"
 						},
 						{
 							"Value": "/SAPAssetManager/Rules/DateTime/RequestStartDate.js",
-							"_Name": "KeyValue4",
+							"_Name": "KeyValue7",
 							"KeyName": "$(L,request_start_date)"
 						},
 						{
 							"Value": "/SAPAssetManager/Rules/DateTime/DueDate.js",
-							"_Name": "KeyValue5",
+							"_Name": "KeyValue8",
 							"KeyName": "$(L,due_date)"
 						}
 					],
@@ -174,7 +189,7 @@
 					"Target": {
 						"EntitySet": "{@odata.readLink}",
 						"Service": "/SAPAssetManager/Services/AssetManager.service",
-						"QueryOptions": "$select=PlannerGroup,MainWorkCenter,WorkCenterInternalId,PlanningPlant,RequestStartDate,DueDate,WOPartners/Employee_Nav/EmployeeName,WOPartners/PartnerFunction,WOPartners/PersonnelNum&$expand=WOPartners,WOPartners/Employee_Nav"
+						"QueryOptions": "$select=ZTailNo,ZMissionDesc,ZMission,PlannerGroup,MainWorkCenter,WorkCenterInternalId,PlanningPlant,RequestStartDate,DueDate,WOPartners/Employee_Nav/EmployeeName,WOPartners/PartnerFunction,WOPartners/PersonnelNum&$expand=WOPartners,WOPartners/Employee_Nav"
 					},
 					"_Name": "WorkOrderOperationDetailsSection",
 					"Header": {

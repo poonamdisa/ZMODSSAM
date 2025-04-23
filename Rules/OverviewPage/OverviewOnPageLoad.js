@@ -3,14 +3,11 @@ import { GlobalVar } from '../../../SAPAssetManager/Rules/Common/Library/GlobalC
 import Logger from '../../../SAPAssetManager/Rules/Log/Logger';
 
 export default function OverviewOnPageLoad(context) {
-    Logger.error("Poonam caption2");
     let userWorkCenter = GlobalVar.getUserSystemInfo().get('USER_PARAM.VAP');
-    Logger.error("Poonam userWorkCenter2",userWorkCenter);
     //F – Royal Air Force
     //N – Royal Navy
     //A – British Army
     let org= userWorkCenter.substring(0,1);
-    Logger.error("Poonam org2",org);
     if(org === "F")
     {
         context.setCaption(context.localizeText('overrviewRAFCaption'));
@@ -24,7 +21,6 @@ export default function OverviewOnPageLoad(context) {
         context.setCaption(context.localizeText('overrviewArmyCaption'));
     }
     else{
-        Logger.error("Poonam caption2",context.localizeText('app_display_name'));
         context.setCaption(context.localizeText('app_display_name'));
     }
     // First time the page has loaded, call OnDateChanged

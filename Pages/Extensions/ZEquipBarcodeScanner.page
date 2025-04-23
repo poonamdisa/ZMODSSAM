@@ -23,12 +23,12 @@
                                  "ID":"{OrderId}",
                                  "DetailImage":" ",
                                  "Subhead":"{OperationNo}",
-                                 "Description":"aaa",
-                                 "SubstatusText":"bbb",
+                                 "Description":"",
+                                 "SubstatusText":"",
                                  "Title":"{OperationEquipment}",
                                  "ScanProperty":"{OperationEquipment}",
                                  "Filter": "",
-                                 "ConfirmationStatusText":"ddd"
+                                 "ConfirmationStatusText":""
                             },
                             "Actions":[
                                 {

@@ -5,7 +5,7 @@ export default function OverviewPageCallTeams(context) {
     
     //let url = context.getGlobalDefinition('/SAPAssetManager/Globals/EPD/PMVDeepLink.global').getValue() + 
     //'sceneId=' + sceneId + '&title=' + title;
-    let url="https://teams.microsoft.com/l/chat/0/0?users=poonam.disa@sap.com";
+    let url="https://teams.microsoft.com/l/chat/0/0?users=diether.de.coninck@sap.com";
 
 let canOpen =  context.nativescript.utilsModule.openUrl(url);
 if (!canOpen) {

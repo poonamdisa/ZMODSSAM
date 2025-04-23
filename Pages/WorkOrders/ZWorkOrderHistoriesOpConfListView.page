@@ -1,0 +1,116 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"Header": {
+						"_Name": "SectionHeader0",
+						"AccessoryType": "None",
+						"UseTopPadding": false
+					},
+					"_Type": "Section.Type.ObjectTable",
+					"Target": {
+						"EntitySet": "{{#Property:@odata.readLink}}/ZWorkOrderOpConf",
+						"Service": "/SAPAssetManager/Services/AssetManager.service",
+						"QueryOptions": "$expand=ZEmployee_Nav,ZEmployee_Nav/EmployeeCommunications_Nav"
+					},
+					"_Name": "WorkorderHistoryListViewSection",
+					"Visible": false,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"ObjectCell": {
+						"Title": "Object Cell",
+						"Subhead": "{ZOrderId}",
+						"Footnote": "/SAPAssetManager/Rules/BusinessPartners/BusinessPartnerName.js",
+						"Description": "#Property:ZEmployee_Nav/#Property:EmployeeName",
+						"SubstatusText": "{ZActivity}",
+						"PreserveIconStackSpacing": false,
+						"AccessoryType": "None",
+						"Tags": [],
+						"AvatarStack": {
+							"ImageIsCircular": true,
+							"ImageHasBorder": false
+						},
+						"AvatarGrid": {
+							"ImageIsCircular": true
+						},
+						"Selected": false,
+						"ContextMenu": {
+							"Items": [],
+							"PerformFirstActionWithFullSwipe": true,
+							"LeadingItems": [],
+							"TrailingItems": []
+						}
+					},
+					"Search": {
+						"Enabled": true,
+						"Placeholder": "$(L,search)",
+						"BarcodeScanner": true,
+						"Delay": 500,
+						"MinimumCharacterThreshold": 3
+					},
+					"HighlightSelectedItem": false
+				},
+				{
+					"_Type": "Section.Type.ContactCell",
+					"Target": {
+						"EntitySet": "{{#Property:@odata.readLink}}/ZWorkOrderOpConf",
+						"Service": "/SAPAssetManager/Services/AssetManager.service",
+						"QueryOptions": "$expand=ZEmployee_Nav,ZEmployee_Nav/EmployeeCommunications_Nav"
+					},
+					"_Name": "BusinessPartnersListViewSection",
+					"Header": {
+						"_Name": "SectionHeader1",
+						"AccessoryType": "None",
+						"UseTopPadding": false
+					},
+					"EmptySection": {
+						"Caption": "$(L,no_businessPartners_available)",
+						"FooterVisible": false
+					},
+					"ContactCell": {
+						"ContextMenu": {
+							"PerformFirstActionWithFullSwipe": true
+						},
+						"Headline": "/ZSAM2305/Rules/BusinessPartners/ZBusinessPartnerName.js",
+						"Subheadline": "{ZOpShortText}",
+						"Description": "/ZSAM2305/Rules/BusinessPartners/ZBusinessPartnerEmail.js",
+						"OnPress": "/ZSAM2305/Rules/BusinessPartners/ZBusinessPartnerCallTeams.js",
+						"ActivityItems": [
+							{
+								"ActivityType": "Phone",
+								"ActivityValue": "/ZSAM2305/Rules/BusinessPartners/ZBusinessPartnerCallablePhone.js"
+							},
+							{
+								"ActivityType": "Email",
+								"ActivityValue": "/ZSAM2305/Rules/BusinessPartners/ZBusinessPartnerEmail.js"
+							},
+							{
+								"ActivityType": "Message",
+								"ActivityValue": "/ZSAM2305/Rules/BusinessPartners/ZBusinessPartnerMobile.js"
+							}
+						]
+					}
+				}
+			],
+			"FilterFeedbackBar": {
+				"ShowAllFilters": false,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			}
+		}
+	],
+	"_Type": "Page",
+	"_Name": "ZWorkOrderHistoriesOpConfListView",
+	"Caption": "History Operation Confirmation List",
+	"PrefersLargeCaption": true
+}

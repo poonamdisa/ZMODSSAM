@@ -16,13 +16,7 @@
                 "SystemItem": "Add",
                 "OnPress": "/SAPAssetManager/Actions/WorkOrders/Operations/WorkOrderOperationDetailsPopover.action",
                 "Visible": "/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderOperationPopoverIsVisible.js"
-            },
-            {
-				"Position": "right",
-				"Icon": "$(PLT,'',/SAPAssetManager/Images/filter.android.png)",
-				"Text": "Scan",
-				"OnPress": "/ZSAM2305/Actions/Extensions/ZEquipBarcodeScannerNav.action"
-			}
+            }
         ]
     },
     "Controls": [
